@@ -1,0 +1,62 @@
+{
+  "total": 13800,
+  "stages": [
+    [
+      "基础英语词汇",
+      2300
+    ],
+    [
+      "通用英语核心词汇",
+      2300
+    ],
+    [
+      "大学英语词汇",
+      2600
+    ],
+    [
+      "雅思核心词汇",
+      2600
+    ],
+    [
+      "高阶学术英语词汇",
+      2200
+    ],
+    [
+      "综合拓展词汇",
+      1800
+    ]
+  ],
+  "source_sha256": "d1ecbdf9ee2b920afb6f430ca6b6bb9f559588cf0dff86e04bd255f9390843cc",
+  "source_bytes": 66009548,
+  "rejected": {
+    "invalid_word": 372616,
+    "missing_or_invalid_pronunciation_or_meaning": 226182,
+    "low_value": 47650,
+    "proper_name_or_capitalized": 34842,
+    "inflection": 56333,
+    "proper_name_meaning": 1245,
+    "us_variant": 32
+  },
+  "source_tags": {
+    "zk": 1578,
+    "gk": 3613,
+    "cet4": 3817,
+    "cet6": 5371,
+    "ky": 4789,
+    "toefl": 6956,
+    "gre": 7484,
+    "ielts": 4996
+  },
+  "source_oxford_flag": 3322,
+  "selected_tags": {
+    "zk": 1481,
+    "gk": 3347,
+    "ielts": 4392,
+    "toefl": 6328,
+    "gre": 4517,
+    "cet4": 3614,
+    "cet6": 5100,
+    "ky": 4566
+  },
+  "selected_oxford_flag": 2938
+}
