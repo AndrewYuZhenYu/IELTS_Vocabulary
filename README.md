@@ -2,6 +2,13 @@
 
 本库面向雅思学术类 7.0—8.0 学习者，覆盖基础英语、通用英语、大学英语、雅思相关词和高阶扩展词。**这不是雅思官方指定词汇表，词数本身不能保证考试分数。**
 
+## 快速开始
+
+1. 打开 `IELTS_Vocabulary_Master.xlsx`，先查看「词汇统计」，再选择适合自己的阶段。
+2. 在阶段工作表中筛选、查词；跨阶段检索使用「全部词汇总表」。
+3. 要导入背词软件，使用 `CSV/` 中对应阶段的文件。三个学习字段依次是单词、音标、中文释义（含词性）。
+4. 遇到可疑读音或释义时再查权威词典；本版未完成逐词人工审校。
+
 ## 规模与阶段
 
 共 **13,800** 个不同拼写的词条。每词仅出现于一个阶段；总表顺次拼接六阶段。阶段内依 ECDICT 的 BNC/当代语料排名取较高频的一项排序，缺排名者按词形排序。
@@ -21,7 +28,20 @@
 
 实际词条数据来自 [ECDICT](https://github.com/skywind3000/ECDICT)，以仓库的 [MIT 许可证](https://github.com/skywind3000/ECDICT/blob/master/LICENSE) 再分发，版权许可文本见 `Data/ECDICT_LICENSE.txt`。原始 CSV 随包保存；字段解释、未取得的资料和使用限制见 `Data/sources.md`。
 
-以下分母为 ECDICT 原库内带相应标签且拼写形式规范的词条，不是独立官方词表：中考 1,481/1,578（93.9%），高考 3,347/3,613（92.6%），CET-4 3,614/3,817（94.7%），CET-6 5,100/5,371（95.0%），IELTS 4,392/4,996（87.9%），TOEFL 6,328/6,956（91.0%）。ECDICT 自带 Oxford 3000 标记收录 2,938/3,322（88.4%），不能当作当前官方 Oxford 3000 覆盖率。Oxford 5000、AWL、AVL、CEFR 的独立覆盖率未取得，**不作覆盖声明**。
+下表分母为 ECDICT 原库内带相应标签且拼写形式规范的词条，不是独立官方词表。
+
+| ECDICT 标记 | 本库收录 / 源库 | 覆盖率 |
+|---|---:|---:|
+| 中考 `zk` | 1,481 / 1,578 | 93.9% |
+| 高考 `gk` | 3,347 / 3,613 | 92.6% |
+| CET-4 `cet4` | 3,614 / 3,817 | 94.7% |
+| CET-6 `cet6` | 5,100 / 5,371 | 95.0% |
+| IELTS `ielts` | 4,392 / 4,996 | 87.9% |
+| TOEFL `toefl` | 6,328 / 6,956 | 91.0% |
+| ECDICT Oxford 3000 标记 | 2,938 / 3,322 | 88.4% |
+
+其中的 Oxford 标记、考试标签和 BNC/当代语料排名均来自 ECDICT；本项目未单独导入官方 Oxford 清单或原始词频表。
+Oxford 5000、AWL、AVL、CEFR 的独立覆盖率未取得，**不作覆盖声明**。
 
 ## 处理标准
 
@@ -38,17 +58,34 @@
 - `Data/vocabulary_metadata.csv`：逐词来源、标签、词频、词形及修正记录。
 - `Data/quality_report.md`、`Data/exceptions.csv`：自动检查结果及异常。
 
+目录结构：
+
+```text
+IELTS_Vocabulary/
+├── README.md
+├── IELTS_Vocabulary_Master.xlsx
+├── CSV/                 # 总表和六阶段 CSV
+├── Data/                # 原始 ECDICT、许可证、元数据及检查报告
+├── Scripts/             # 下载、构建、验证脚本
+└── requirements.txt
+```
+
+Excel 文件包含「使用说明」「词汇统计」「全部词汇总表」和六个阶段工作表。学习工作表冻结首行、开启自动筛选；可在 macOS 或 Windows 的 Excel 中打开。CSV 使用 UTF-8 BOM、标准逗号分隔和引号转义。导入 Anki 时，选择相应阶段 CSV，指定逗号分隔和 UTF-8，将三列映射到卡片字段，并跳过第一行表头。
+
 ## 复现
 
 安装 `requirements.txt` 后依次执行：
 
 ```bash
+python3 -m pip install -r requirements.txt
 python3 Scripts/download_sources.py
 python3 Scripts/build_vocabulary.py
 python3 Scripts/validate_vocabulary.py
 ```
 
 脚本在 `IELTS_Vocabulary` 目录运行或使用脚本绝对路径均可。构建时读取 `Data/ecdict.csv`；下载脚本仅在原文件不存在时访问网络。
+
+本次生成后的自动检查结果为 **0 项结构异常**：总表与六阶段数量一致，词条无重复，XLSX 与 CSV 已逐单元格比较，文件可正常读取。六阶段各抽取 4 词进行小规模语义复核，记录见 `Data/quality_report.md`。自动检查通过不表示释义和音标已获全面人工核验。
 
 ## 已知局限
 
