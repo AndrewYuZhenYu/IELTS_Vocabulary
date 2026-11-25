@@ -1,62 +1,69 @@
 {
-  "total": 13800,
+  "total": 14212,
   "stages": [
     [
       "基础英语词汇",
-      2300
+      1740
     ],
     [
       "通用英语核心词汇",
-      2300
+      1435
     ],
     [
       "大学英语词汇",
-      2600
+      3252
     ],
     [
       "雅思核心词汇",
-      2600
+      2553
     ],
     [
       "高阶学术英语词汇",
-      2200
+      3434
     ],
     [
       "综合拓展词汇",
-      1800
+      1798
     ]
   ],
   "source_sha256": "d1ecbdf9ee2b920afb6f430ca6b6bb9f559588cf0dff86e04bd255f9390843cc",
   "source_bytes": 66009548,
   "rejected": {
     "invalid_word": 372616,
-    "missing_or_invalid_pronunciation_or_meaning": 226182,
-    "low_value": 47650,
-    "proper_name_or_capitalized": 34842,
-    "inflection": 56333,
+    "missing_or_invalid_pronunciation_or_meaning": 226498,
+    "low_value": 48228,
+    "proper_name_or_capitalized": 34831,
+    "inflection": 54187,
     "proper_name_meaning": 1245,
-    "us_variant": 32
+    "normalized_us_variant": 30
   },
   "source_tags": {
-    "zk": 1578,
-    "gk": 3613,
-    "cet4": 3817,
+    "zk": 1583,
+    "gk": 3619,
+    "cet4": 3818,
     "cet6": 5371,
-    "ky": 4789,
-    "toefl": 6956,
-    "gre": 7484,
-    "ielts": 4996
+    "ky": 4794,
+    "toefl": 6957,
+    "gre": 7486,
+    "ielts": 4995
   },
-  "source_oxford_flag": 3322,
+  "source_oxford_flag": 3328,
   "selected_tags": {
-    "zk": 1481,
-    "gk": 3347,
-    "ielts": 4392,
-    "toefl": 6328,
-    "gre": 4517,
-    "cet4": 3614,
-    "cet6": 5100,
-    "ky": 4566
+    "zk": 1562,
+    "gk": 3528,
+    "cet4": 3757,
+    "cet6": 5239,
+    "ky": 4721,
+    "toefl": 6467,
+    "gre": 4564,
+    "ielts": 4546
   },
-  "selected_oxford_flag": 2938
+  "selected_oxford_flag": 3209,
+  "oxford_official": {
+    "oxford3000_single_headwords": 2968,
+    "oxford3000_covered": 2968,
+    "oxford5000_extension_single_headwords": 1994,
+    "oxford5000_extension_covered": 1944,
+    "excluded_phrases_or_noncanonical_labels": 14
+  }
 }
